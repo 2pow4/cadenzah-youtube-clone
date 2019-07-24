@@ -1,0 +1,30 @@
+{
+  "name": "cadenzah-markdown-preview",
+  "version": "1.0.0",
+  "description": "Markdown preview mini service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx babel ./src/jsx --out-file ./public/scripts/bundle.js",
+    "build-watch": "npx babel ./src/jsx --out-file ./public/scripts/bundle.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2pow4/cadenzah-markdown-preview.git"
+  },
+  "author": "cadenzah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/2pow4/cadenzah-markdown-preview/issues"
+  },
+  "homepage": "https://github.com/2pow4/cadenzah-markdown-preview#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-react": "^7.0.0"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
