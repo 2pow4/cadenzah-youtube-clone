@@ -1,12 +1,12 @@
 const path = require('path')
 
 module.exports = {
-  entry: "./src/jsx/index.jsx",
+  entry: ["core-js/stable", "regenerator-runtime/runtime", "./src/jsx/index.jsx"],
   output: {
     filename: "bundle.js",
     path: path.resolve(`${__dirname}/public/scripts`)
   },
-  mode: "none",
+  mode: "development",
   module: {
     rules: [
       {
