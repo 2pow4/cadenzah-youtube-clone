@@ -6,16 +6,16 @@ let youtubeAPIURL = `https://www.googleapis.com/youtube/v3/search`
   + `&order=relevance`
   + `&key=AIzaSyD3sCnZg05jineQg2Puzee12EYXX4E9XA4`
 
-//   + `&q=zerg`
-
 const Input = require('./Input.jsx')
+const ResultContainer = require('./ResultContainer.jsx')
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       keyword: "",
-      data: {}
+      data: {},
+      fetchFinish: false
     }
   }
 
@@ -27,7 +27,10 @@ class App extends React.Component {
     const newYoutubeAPIURL = youtubeAPIURL + `&q=${this.state.keyword}`
     axios.get(newYoutubeAPIURL)
       .then((response) => {
-        this.setState({ data: response })
+        this.setState({
+          data: response.data,
+          fetchFinish: true
+        })
         return new Promise(resolve => {
           resolve(response)
         })
@@ -45,9 +48,14 @@ class App extends React.Component {
       <div>
         <h2>Youtube Search & Player</h2>
         <Input
-          onInputChange = {(e) => this.handleSearchInput(e)}
-          onSearchExecuted = {(e) => this.handleFetchData(e)}
-          searchKeyword = {this.state.keyword}/>
+          onInputChange={(e) => this.handleSearchInput(e)}
+          onSearchExecuted={(e) => this.handleFetchData(e)}
+          searchKeyword={this.state.keyword}/>
+        {this.state.fetchFinish ? (
+          <ResultContainer items={this.state.data.items}/>
+        ) : (
+          <p>Not Ready Yet</p>
+        )}
         <h5>Youtube API Key is provided by cadenzah. DON't ABUSE!</h5>
       </div>
     )
