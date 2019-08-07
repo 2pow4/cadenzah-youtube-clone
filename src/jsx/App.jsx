@@ -76,7 +76,8 @@ class App extends React.Component {
         {this.state.fetchFinish ?
           this.state.showPlayer ? (
             <Player
-              onPrev={(e) => this.handleBackButton(e)}/>
+              onPrev={(e) => this.handleBackButton(e)}
+              videoId={this.state.playingVideoId} />
           ) : (
           <ResultContainer
             items={this.state.data.items}
