@@ -11,11 +11,18 @@ const ResultContainer = (props) => {
     </div>
   )
 
-  resultList = props.items.map((element) => (
-    <Result element={element} />
+  resultList = props.items.map((element, index) => (
+    <Result
+      element={element}
+      onVideoClicked={props.onVideoClicked}
+      key={index} />
   ))
 
-  return resultList
+  return (
+    <div>
+      {resultList}
+    </div>
+  )
 }
 
 module.exports = ResultContainer

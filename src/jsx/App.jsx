@@ -6,8 +6,11 @@ let youtubeAPIURL = `https://www.googleapis.com/youtube/v3/search`
   + `&order=relevance`
   + `&key=AIzaSyD3sCnZg05jineQg2Puzee12EYXX4E9XA4`
 
+// IN PRODUCTION, DO NOT PUT YOUR API KEY IN THE FRONT CODE!
+
 const Input = require('./Input.jsx')
 const ResultContainer = require('./ResultContainer.jsx')
+const Player = require('./Player.jsx')
 
 class App extends React.Component {
   constructor(props) {
@@ -15,7 +18,9 @@ class App extends React.Component {
     this.state = {
       keyword: "",
       data: {},
-      fetchFinish: false
+      fetchFinish: false,
+      showPlayer: false,
+      playingVideoId: ""
     }
   }
 
@@ -39,6 +44,23 @@ class App extends React.Component {
       })
   }
 
+  handlePlayer(clickedVideoId, e) {
+    // 눌렀을 때에 동영상 ID를 state에 갱신하고,
+    this.setState({
+      playingVideoId: clickedVideoId,
+      showPlayer: true
+   })
+
+    // 리스트 뷰를 없애고 플레이어 뷰로 전환
+    // fetchFinish를 false로 전환하고, showPlayer를 true로 만든다
+  }
+
+  handleBackButton(e) {
+    this.setState({
+      showPlayer: false
+    })
+  }
+
   componentDidMount() {
 
   }
@@ -50,10 +72,16 @@ class App extends React.Component {
         <Input
           onInputChange={(e) => this.handleSearchInput(e)}
           onSearchExecuted={(e) => this.handleFetchData(e)}
-          searchKeyword={this.state.keyword}/>
-        {this.state.fetchFinish ? (
-          <ResultContainer items={this.state.data.items}/>
-        ) : (
+          searchKeyword={this.state.keyword} />
+        {this.state.fetchFinish ?
+          this.state.showPlayer ? (
+            <Player
+              onPrev={(e) => this.handleBackButton(e)}/>
+          ) : (
+          <ResultContainer
+            items={this.state.data.items}
+            onVideoClicked={this.handlePlayer.bind(this)} />
+          ) : (
           <p>Not Ready Yet</p>
         )}
         <h5>Youtube API Key is provided by cadenzah. DON't ABUSE!</h5>

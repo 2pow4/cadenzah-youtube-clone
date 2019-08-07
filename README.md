@@ -35,7 +35,12 @@ $ npm run build
 4. `index.html` 파일을 브라우저 상에서 실행합니다.
 
 <a name="tech-stack"></a>
-## Tech Stack
+## Development Environment
 - [`react(v16.8.6)`](https://reactjs.org)
 - [`webpack(v4.37.0)`](https://webpack.js.org)
 - [`babel(v7.5.5)`](https://babeljs.io/docs/en/babel-cli)
+
+### Utility Libraries
+
+- [`axios`]
+- [`react-youtube`](https://www.npmjs.com/package/react-youtube)
