@@ -42,5 +42,5 @@ $ npm run build
 
 ### Utility Libraries
 
-- [`axios`]
+- [`axios`](https://www.npmjs.com/package/axios)
 - [`react-youtube`](https://www.npmjs.com/package/react-youtube)

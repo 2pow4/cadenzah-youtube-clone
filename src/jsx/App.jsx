@@ -68,7 +68,15 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h2>Youtube Search & Player</h2>
+        <h2>
+          <a
+            href=""
+            onClick={() => {
+              window.location.reload()
+            }}>
+            Youtube Search & Player
+          </a>
+        </h2>
         <Input
           onInputChange={(e) => this.handleSearchInput(e)}
           onSearchExecuted={(e) => this.handleFetchData(e)}
