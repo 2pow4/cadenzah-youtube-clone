@@ -11,6 +11,7 @@ let youtubeAPIURL = `https://www.googleapis.com/youtube/v3/search`
 const Input = require('./Input.jsx')
 const ResultContainer = require('./ResultContainer.jsx')
 const Player = require('./Player.jsx')
+const styles = require('./App.css')
 
 class App extends React.Component {
   constructor(props) {
@@ -67,16 +68,19 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>
-          <a
-            href=""
-            onClick={() => {
-              window.location.reload()
-            }}>
-            Youtube Search & Player
-          </a>
-        </h2>
+      <div className="container">
+        <nav>
+          <div className="nav-wrapper teal lighten-1">
+            <a
+              href="#"
+              className="brand-logo center"
+              onClick={() => {
+                window.location.reload()
+              }}>
+              Youtube Search & Player
+            </a>
+          </div>
+        </nav>
         <Input
           onInputChange={(e) => this.handleSearchInput(e)}
           onSearchExecuted={(e) => this.handleFetchData(e)}
