@@ -19,7 +19,7 @@ const ResultContainer = (props) => {
   ))
 
   return (
-    <div>
+    <div className="row">
       {resultList}
     </div>
   )

@@ -2,10 +2,17 @@ const React = require('react')
 
 const Result = (props) => {
   return (
-    <div
-      onClick={props.onVideoClicked.bind(null, props.element.id.videoId)}>
-      <img src={props.element.snippet.thumbnails.medium.url} />
-      <p>동영상 제목: {props.element.snippet.title}</p>
+    <div className="col s12 m6 l4">
+      <div
+        className="card"
+        onClick={props.onVideoClicked.bind(null, props.element.id.videoId)} >
+        <div className="card-image">
+          <img src={props.element.snippet.thumbnails.medium.url} />
+        </div>
+        <div className="card-content">
+          <span className="truncate">{props.element.snippet.title}</span>
+        </div>
+      </div>
     </div>
   )
 }

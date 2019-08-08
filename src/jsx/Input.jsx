@@ -7,6 +7,7 @@ const Input = (props) => {
         <input
           type="text"
           onChange={props.onInputChange}
+          onKeyDown={props.onEnterPressed}
           value={props.searchKeyword}
           autofocus="" />
         <label htmlfor="searchkeyword">검색 키워드를 입력하세요</label>
@@ -14,7 +15,9 @@ const Input = (props) => {
       </div>
       <button
         className="col s1 btn-large"
-        onClick={props.onSearchExecuted}>검색</button>
+        onClick={props.onSearchExecuted}>
+        <i className="material-icons">youtube_searched_for</i>
+      </button>
     </div>
   )
 }
