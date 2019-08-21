@@ -17,7 +17,6 @@ const ResultList = (props) => {
       onVideoClicked={props.onVideoClicked}
       key={index} />
   ))
-  console.log(resultList)
 
   return (
     <div className="row">

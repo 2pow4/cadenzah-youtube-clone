@@ -31,7 +31,6 @@ class InputContainer extends React.Component {
     const newYoutubeAPIURL = youtubeAPIURL + `&q=${this.props.keyword}`
     axios.get(newYoutubeAPIURL)
       .then((response) => {
-        console.log(response.data)
         this.props.searchExec(response.data)
       })
   }
