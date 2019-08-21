@@ -1,5 +1,4 @@
 const React = require('react')
-// const Youtube = require('react-youtube').default
 
 const Player = (props) => {
   return (

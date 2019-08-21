@@ -1,7 +1,5 @@
 # cadenzah-youtube-clone
 
-In Progress...
-
 ## Index
 
 - [Features](#features)
@@ -15,7 +13,7 @@ Youtube API를 활용하는 간단한 동영상 검색 및 재생 서비스
 <a name="how-to-run"></a>
 ## How to Run
 
-아직 작동하지 않습니다!
+Github Page를 통한 시연은 `master` 브랜치를 이용해주세요.
 
 1. 소스를 다운로드하고, 저장소 폴더 안으로 들어갑니다.
 ```bash
@@ -39,9 +37,9 @@ $ npm run build
 - [`react(v16.8.6)`](https://reactjs.org)
 - [`webpack(v4.37.0)`](https://webpack.js.org)
 - [`babel(v7.5.5)`](https://babeljs.io/docs/en/babel-cli)
+- [`redux(v4.0.4)`](https://redux.js.org)
 
 ### Utility Libraries
 
 - [`axios`](https://www.npmjs.com/package/axios)
-- [`react-youtube`](https://www.npmjs.com/package/react-youtube)
-- [`materialize-css`]()
+- [`materialize-css`](https://materializecss.com)
