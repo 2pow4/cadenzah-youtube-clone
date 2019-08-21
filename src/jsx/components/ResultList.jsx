@@ -1,7 +1,7 @@
 const React = require('react')
 const Result = require('./Result.jsx')
 
-const ResultContainer = (props) => {
+const ResultList = (props) => {
   let resultList
 
   // if search result is empty, render nothing
@@ -17,6 +17,7 @@ const ResultContainer = (props) => {
       onVideoClicked={props.onVideoClicked}
       key={index} />
   ))
+  console.log(resultList)
 
   return (
     <div className="row">
@@ -25,4 +26,4 @@ const ResultContainer = (props) => {
   )
 }
 
-module.exports = ResultContainer
+module.exports = ResultList

@@ -7,8 +7,7 @@ const Player = (props) => {
       <iframe src={`https://www.youtube.com/embed/${props.videoId}`}
         frameBorder='0'
         allow='encrypted-media'
-        allowFullScreen
-      />
+        allowFullScreen />
     </div>
   )
 }

@@ -8,10 +8,10 @@ const Input = (props) => {
           type="text"
           onChange={props.onInputChange}
           onKeyDown={props.onEnterPressed}
-          value={props.searchKeyword}
-          autofocus="" />
-        <label htmlfor="searchkeyword">검색 키워드를 입력하세요</label>
-        <span class="helper-text">단일 동영상 검색만 가능합니다</span>
+          value={props.searchKeyword || ''}
+          autoFocus="" />
+        <label htmlFor="searchkeyword">검색 키워드를 입력하세요</label>
+        <span className="helper-text">단일 동영상 검색만 가능합니다</span>
       </div>
       <button
         className="col s1 btn-large "

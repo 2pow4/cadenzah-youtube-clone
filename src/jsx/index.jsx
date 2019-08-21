@@ -1,8 +1,16 @@
 const React = require('react')
 const ReactDOM = require('react-dom')
-const App = require('./App.jsx')
+
+const { Provider } = require('react-redux')
+const { createStore } = require('redux')
+const rootReducer = require('../store/reducers')
+
+const AppContainer = require('./containers/AppContainer.jsx')
+const store = createStore(rootReducer)
 
 ReactDOM.render(
-  <App />,
+  <Provider store={store}>
+    <AppContainer />
+  </Provider>,
   document.getElementById('app')
 )
