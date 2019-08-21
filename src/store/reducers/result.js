@@ -9,7 +9,6 @@ const result = (state = initialState, action) => {
     case VIDEO_CLICK:
       return {
         ...state,
-        showPlayer: true,
         playingVideoId: action.playingVideoId
       }
     default:

@@ -8,7 +8,8 @@ const AppContainer = (props) => {
     <App
       showPlayer={props.showPlayer}
       fetchFinish={props.fetchFinish}
-      backClick={props.backClick} />
+      backClick={props.backClick}
+      playingVideoId={props.playingVideoId} />
   )
 }
 
