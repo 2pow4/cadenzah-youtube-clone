@@ -4,7 +4,8 @@ module.exports = {
   entry: ["core-js/stable", "regenerator-runtime/runtime", "./src/jsx/index.jsx"],
   output: {
     filename: "bundle.js",
-    path: path.resolve(`${__dirname}/public/scripts`)
+    path: path.resolve(`${__dirname}/public/scripts`),
+    publicPath: "/"
   },
   mode: "development",
   module: {
