@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path')
 const logger = require('morgan')
 const app = express()
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 8082
 
 app.use(express.static('public'))
 app.use(express.json())

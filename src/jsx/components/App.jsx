@@ -1,4 +1,5 @@
 const React = require('react')
+const { Route, Switch } = require('react-router-dom')
 
 const InputContainer = require('../containers/InputContainer.jsx')
 const ResultListContainer = require('../containers/ResultListContainer.jsx')
@@ -45,16 +46,11 @@ class App extends React.Component {
         </nav>
         <InputContainer />
         {/* Contents - Results and Player */}
-        {this.props.fetchFinish ?
-          this.props.showPlayer ? (
-            <Player
-              videoId={this.props.playingVideoId} />
-          ) : (
-          <ResultListContainer />
-          ) : (
-          <div></div>
-        )}
-
+        <Switch>
+          <Route exact path="/search/:keyword" component={ResultListContainer} />
+          <Route exact path="/search" render={() => { return (<div></div>) }}/> // 초기 화면; 검색 화면 처리
+        </Switch>
+        <Route exact path="/video/:videoId" component={Player} />
         {/* Footer */}
         <footer className="page-footer white">
           <div className="footer-copyright teal lighten-1 center">
@@ -69,3 +65,13 @@ class App extends React.Component {
 }
 
 module.exports = App
+
+// {this.props.fetchFinish ?
+//   this.props.showPlayer ? (
+//     <Player
+//       videoId={this.props.playingVideoId} />
+//   ) : (
+//   <ResultListContainer />
+//   ) : (
+//   <div></div>
+// )}

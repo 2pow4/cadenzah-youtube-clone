@@ -1,5 +1,6 @@
 const React = require('react')
 const { connect } = require('react-redux')
+const { withRouter } = require('react-router-dom')
 const ResultList = require('../components/ResultList.jsx')
 const { videoClick } = require('../../store/actions')
 
@@ -7,7 +8,10 @@ const ResultListContainer = (props) => {
   return (
     <ResultList
       items={props.items}
-      onVideoClicked={(clickedVideoId, e) => props.videoClick(clickedVideoId)} />
+      onVideoClicked={(clickedVideoId, e) => {
+        props.videoClick(clickedVideoId)
+        props.history.push(`/video/${clickedVideoId}`)
+      }} />
   )
 }
 
@@ -22,4 +26,4 @@ const mapDispatchToProps = (dispatch) => ({
 module.exports = connect(
   mapStateToProps,
   mapDispatchToProps
-)(ResultListContainer)
+)(withRouter(ResultListContainer))

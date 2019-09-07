@@ -1,5 +1,6 @@
 const React = require('react')
 const { connect } = require('react-redux')
+const { withRouter } = require('react-router-dom')
 const Input = require('../components/Input.jsx')
 const { searchInput, searchExec } = require('../../store/actions')
 
@@ -32,6 +33,7 @@ class InputContainer extends React.Component {
     axios.get(newYoutubeAPIURL)
       .then((response) => {
         this.props.searchExec(response.data)
+        this.props.history.push(`/search/${this.props.keyword}`)
       })
   }
 
@@ -58,4 +60,4 @@ const mapDispatchToProps = dispatch => ({
 module.exports = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(InputContainer)
+)(withRouter(InputContainer))
