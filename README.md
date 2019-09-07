@@ -11,8 +11,8 @@
 ## Features
 Youtube API를 활용하는 간단한 동영상 검색 및 재생 서비스
 
-- 원하는 영상 검색
-- 영상 재생 기능
+- 원하는 영상 검색 (/search/:search_keyword)
+- 영상 재생 기능 (/video/:video_ID)
 
 <a name="try"></a>
 ## Try it!
@@ -47,6 +47,8 @@ $ npm run build
 - [`react(v16.8.6)`](https://reactjs.org)
 - [`webpack(v4.37.0)`](https://webpack.js.org)
 - [`babel(v7.5.5)`](https://babeljs.io/docs/en/babel-cli)
+- [`redux`]()
+- [`react-router`]()
 
 ### Utility Libraries
 
