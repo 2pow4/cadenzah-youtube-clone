@@ -47,10 +47,10 @@ class App extends React.Component {
         <InputContainer />
         {/* Contents - Results and Player */}
         <Switch>
-          <Route exact path="/search/:keyword" component={ResultListContainer} />
-          <Route exact path="/search" render={() => { return (<div></div>) }}/> // 초기 화면; 검색 화면 처리
+          <Route exact path="/cadenzah-youtube-clone/search/:keyword" component={ResultListContainer} />
+          <Route exact path="/cadenzah-youtube-clone/search" render={() => { return (<div></div>) }}/> // 초기 화면; 검색 화면 처리
         </Switch>
-        <Route exact path="/video/:videoId" component={Player} />
+        <Route exact path="/cadenzah-youtube-clone/video/:videoId" component={Player} />
         {/* Footer */}
         <footer className="page-footer white">
           <div className="footer-copyright teal lighten-1 center">

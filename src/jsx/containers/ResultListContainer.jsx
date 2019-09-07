@@ -10,7 +10,7 @@ const ResultListContainer = (props) => {
       items={props.items}
       onVideoClicked={(clickedVideoId, e) => {
         props.videoClick(clickedVideoId)
-        props.history.push(`/video/${clickedVideoId}`)
+        props.history.push(`/cadenzah-youtube-clone/video/${clickedVideoId}`)
       }} />
   )
 }

@@ -33,7 +33,7 @@ class InputContainer extends React.Component {
     axios.get(newYoutubeAPIURL)
       .then((response) => {
         this.props.searchExec(response.data)
-        this.props.history.push(`/search/${this.props.keyword}`)
+        this.props.history.push(`/cadenzah-youtube-clone/search/${this.props.keyword}`)
       })
   }
 
